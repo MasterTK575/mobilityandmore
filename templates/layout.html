@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link href="/static/styles.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>{% block title %}{% endblock %} | mobilityandmore</title>
+  </head>
+
+  <body>
+    <!--navbar-->
+    <header>
+      <img class="logo" src="" alt="logo" />
+      <nav>
+        <ul class="nav_links">
+          <li><a href="#">Zu meiner Person</a></li>
+          <li><a href="#">Präsenzkurse</a></li>
+          <li><a href="#">Aktuelles</a></li>
+          <li><a href="#">Vorträge</a></li>
+          <li><a href="#">Referenzen</a></li>
+          <li><a href="#">Kontakt</a></li>
+          <li><a href="#">Impressum</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!--End navbar-->
+
+    {% block main %} {% endblock %}
+
+    <!--footer-->
+    <!--end footer-->
+  </body>
+</html>
