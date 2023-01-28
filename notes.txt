@@ -1,0 +1,3 @@
+TODO: 
+1. finish mobile navbar
+2. make navbar left scrollable (in case of small-ish screens)
