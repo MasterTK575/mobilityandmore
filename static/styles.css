@@ -3,8 +3,8 @@
     font-family: 'Montserrat', sans-serif;
     --text-primary: black;
     --text-secondary: white;
-    --bg-primary: grey;
-    --bg-secondary: brown;
+    --bg-primary: rgb(255, 196, 189);
+    --bg-secondary: rgb(255, 162, 162);
 }
 
 body {
@@ -16,27 +16,26 @@ body {
 }
 
 body::-webkit-scrollbar {
-    width: 0.3rem;
+    width: 0.5rem;
 }
 
 body::-webkit-scrollbar-track {
-    background: black;
+    background: lightgrey;
 }
 
 body::-webkit-scrollbar-thumb {
-    background: brown;
+    background: var(--bg-primary);
 }
 
 main {
-    margin-left: 7rem;
+    margin-left: 5rem;
     padding: 1rem; 
 }
 
 .navbar {
-    width: 7rem;
-    height: 100vh;
     position: fixed;
     background-color: var(--bg-primary);
+    transition: 150ms ease;
 }
 .navbar-nav {
     list-style: none;
@@ -44,15 +43,106 @@ main {
     margin: 0;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     height: 100%;
 }
 .nav-item {
     width: 100%;
+    transition: 150ms ease;
 }
+
 .nav-item:last-child {
     margin-top: auto;
 }
-.nav-item:first-child {
-    margin-bottom: auto;
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: 150ms ease;
+}
+
+.link-text{
+    display: none;
+}
+
+.nav-link svg {
+    min-width: 2rem;
+    margin: 0 1.5rem;
+}
+
+.nav-item:hover {
+    background: var(--bg-secondary);
+}
+
+/* In case you only want to highlight the logo on hover
+.logo:hover .nav-link{
+    color: var(--text-secondary);
+}
+*/
+
+.nav-link:hover {
+    color: var(--text-secondary);
+}
+
+
+.logo {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 100%;
+    background: var(--bg-secondary);
+}
+.logo-text {
+    margin-left: 1.5rem;
+}
+.logo svg {
+    transform: rotate(0deg);
+    transition: transform 300ms;
+}
+.navbar:hover .logo svg {
+    transform: rotate(-180deg);
+}
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+    .navbar {
+        top: 0;
+        width: 100vw;
+        height: 5rem;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+    }
+    
+    .nav-link {
+        justify-content: center;
+    }
+    
+    main {
+        margin-left: 0;
+        margin-top: 5rem;
+    }
+}
+
+/* Large screens */
+@media only screen and (min-width: 600px) {
+    .navbar {
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+    }
+    .navbar:hover {
+        width: 15rem;
+    }
+    .navbar:hover .link-text {
+        display: block;
+    }
 }
