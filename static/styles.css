@@ -24,7 +24,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-    background: var(--bg-primary);
+    background: var(--bg-secondary);
 }
 
 main {
@@ -106,41 +106,96 @@ main {
     transform: rotate(-180deg);
 }
 
-.responsive {
+.mobile {
     display: none;
 }
 
 /* Small screens */
 @media only screen and (max-width: 600px) {
+    /* Fix Navbar to the top */
     .navbar {
         top: 0;
         width: 100vw;
         height: 5rem;
     }
-
-    .logo {
-        display: none;
-    }
-
-    .navbar-nav {
-        flex-direction: row;
-    }
-    
-    .nav-link {
-        justify-content: center;
-    }
-    
-    .nav-item {
-        display: none;
-    }
-    .responsive {
-        display: flex;
-    }
-
     main {
         margin-left: 0;
         margin-top: 5rem;
     }
+    /* Style the new mobile navbar */
+    .mobile {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        border-style: none none solid;
+        border-width: 3px;
+        border-color: var(--text-primary);
+
+    }
+    .mobile-item {
+        height: 100%;
+        transition: 150ms ease;
+    }
+    .mobile-item:hover {
+        background: var(--bg-secondary);
+    }
+    .mobile-item:hover .mobile-link{
+        color: white;
+    }
+    .mobile-link {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        height: 5rem;
+        color: var(--text-primary);
+    }
+    .mobile-link svg {
+        min-width: 2rem;
+        margin: 0 1.5rem;
+    }
+    .brand {
+        width: 100%;
+        font-weight: bold;
+        font-size: 1.2rem;
+        padding-left: 2rem;
+        text-align: center;
+    }
+
+
+    /* Style the drop-down menu */
+    .logo {
+        display: none;
+    }
+    .navbar-nav {
+        display: none;
+        padding-top: 0.5rem;
+        height: 18.5rem;
+        background: var(--bg-primary);
+        
+    } 
+    .nav-link {
+        justify-content: center;
+        height: 3rem;
+    }
+    .nav-link svg {
+        display: none;
+    }
+    .nav-link .link-text {
+        display: block;
+    }
+    .nav-item:last-child {
+        margin-top: 0;
+    }
+    .navbar-nav.active {
+        transition: 300ms ease;
+        display: flex;
+    }
+  
 }
 
 /* Large screens */
