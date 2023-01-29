@@ -10,3 +10,13 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 @app.route("/")
 def index():
     return render_template("index.html")
+
+
+@app.route("/profil")
+def profil():
+    return render_template("profil.html")
+
+
+@app.route("/kontakt")
+def index():
+    return render_template("kontakt.html")

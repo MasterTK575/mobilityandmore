@@ -12,7 +12,9 @@ body {
     background-color: white;
     margin: 0;
     padding: 0;
-
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 body::-webkit-scrollbar {
@@ -87,7 +89,6 @@ main {
     color: var(--text-secondary);
 }
 
-
 .logo {
     font-weight: bold;
     margin-bottom: 1rem;
@@ -108,6 +109,13 @@ main {
 
 .mobile {
     display: none;
+}
+
+
+.footer {
+    margin-left: 5rem;
+    background-color: grey;
+    margin-top: auto;
 }
 
 /* Small screens */
@@ -194,6 +202,11 @@ main {
     .navbar-nav.active {
         transition: 300ms ease;
         display: flex;
+    }
+
+    /* Style footer */
+    .footer {
+        margin-left: 0;
     }
   
 }
