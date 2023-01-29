@@ -1,0 +1,4 @@
+TODO: 
+1. make navbar left scrollable (in case of small-ish screens) / or remove icons
+2. make different pages
+3. make the contact form work

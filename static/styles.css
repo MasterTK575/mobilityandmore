@@ -1,43 +1,214 @@
-* {
-    box-sizing: border-box;
+:root {
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    --text-primary: black;
+    --text-secondary: white;
+    --bg-primary: rgb(255, 196, 189);
+    --bg-secondary: rgb(255, 162, 162);
+}
+
+body {
+    color: black;
+    background-color: white;
     margin: 0;
     padding: 0;
-    background-color: beige;
-    font-family: 'Montserrat', sans-serif;
+
 }
 
-li, a {
-    font-weight: 400;
-    font-size: 16px;
-    color: black;
-    text-decoration: none;
+body::-webkit-scrollbar {
+    width: 0.5rem;
 }
 
-header {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 30px 10%;
+body::-webkit-scrollbar-track {
+    background: lightgrey;
 }
 
-.nav_links {
+body::-webkit-scrollbar-thumb {
+    background: var(--bg-secondary);
+}
+
+main {
+    margin-left: 5rem;
+    padding: 1rem; 
+}
+
+.navbar {
+    position: fixed;
+    background-color: var(--bg-primary);
+    transition: 150ms ease;
+}
+.navbar-nav {
     list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+.nav-item {
+    width: 100%;
+    transition: 150ms ease;
 }
 
-.nav_links li {
-    display: inline-block;
-    padding: 0px 20px;
+.nav-item:last-child {
+    margin-top: auto;
 }
 
-.nav_links li a {
-    transition: all 0.2s ease 0s;
+.nav-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: 150ms ease;
 }
 
-.nav_links li a:hover {
-    color:cadetblue;
+.link-text{
+    display: none;
 }
+
+.nav-link svg {
+    min-width: 2rem;
+    margin: 0 1.5rem;
+}
+
+.nav-item:hover {
+    background: var(--bg-secondary);
+}
+
+/* In case you only want to highlight the logo on hover
+.logo:hover .nav-link{
+    color: var(--text-secondary);
+}
+*/
+
+.nav-link:hover {
+    color: var(--text-secondary);
+}
+
 
 .logo {
-    cursor: pointer;
-    margin-right: auto;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 100%;
+    background: var(--bg-secondary);
+}
+.logo-text {
+    margin-left: 1.5rem;
+}
+.logo svg {
+    transform: rotate(0deg);
+    transition: transform 300ms;
+}
+.navbar:hover .logo svg {
+    transform: rotate(-180deg);
+}
+
+.mobile {
+    display: none;
+}
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+    /* Fix Navbar to the top */
+    .navbar {
+        top: 0;
+        width: 100vw;
+        height: 5rem;
+    }
+    main {
+        margin-left: 0;
+        margin-top: 5rem;
+    }
+    /* Style the new mobile navbar */
+    .mobile {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        border-style: none none solid;
+        border-width: 3px;
+        border-color: var(--text-primary);
+
+    }
+    .mobile-item {
+        height: 100%;
+        transition: 150ms ease;
+    }
+    .mobile-item:hover {
+        background: var(--bg-secondary);
+    }
+    .mobile-item:hover .mobile-link{
+        color: white;
+    }
+    .mobile-link {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        height: 5rem;
+        color: var(--text-primary);
+    }
+    .mobile-link svg {
+        min-width: 2rem;
+        margin: 0 1.5rem;
+    }
+    .brand {
+        width: 100%;
+        font-weight: bold;
+        font-size: 1.2rem;
+        padding-left: 2rem;
+        text-align: center;
+    }
+
+
+    /* Style the drop-down menu */
+    .logo {
+        display: none;
+    }
+    .navbar-nav {
+        display: none;
+        padding-top: 0.5rem;
+        height: 18.5rem;
+        background: var(--bg-primary);
+        
+    } 
+    .nav-link {
+        justify-content: center;
+        height: 3rem;
+    }
+    .nav-link svg {
+        display: none;
+    }
+    .nav-link .link-text {
+        display: block;
+    }
+    .nav-item:last-child {
+        margin-top: 0;
+    }
+    .navbar-nav.active {
+        transition: 300ms ease;
+        display: flex;
+    }
+  
+}
+
+/* Large screens */
+@media only screen and (min-width: 600px) {
+    .navbar {
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+    }
+    .navbar:hover {
+        width: 15rem;
+    }
+    .navbar:hover .link-text {
+        display: block;
+    }
 }
