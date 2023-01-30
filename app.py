@@ -18,5 +18,5 @@ def profil():
 
 
 @app.route("/kontakt")
-def index():
+def kontakt():
     return render_template("kontakt.html")

@@ -19,7 +19,7 @@
     <nav class="navbar">
       <ul class="mobile">
         <li class="mobile-item brand">
-          <a href="#" class="mobile-link">mobilityandmore</a>
+          <a href="/" class="mobile-link">mobilityandmore</a>
         </li>
         <li class="mobile-item toggle">
           <a href="#" class="mobile-link">
@@ -75,6 +75,17 @@
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+              <path
+                d="M152 64H296V24C296 10.75 306.7 0 320 0C333.3 0 344 10.75 344 24V64H384C419.3 64 448 92.65 448 128V448C448 483.3 419.3 512 384 512H64C28.65 512 0 483.3 0 448V128C0 92.65 28.65 64 64 64H104V24C104 10.75 114.7 0 128 0C141.3 0 152 10.75 152 24V64zM48 448C48 456.8 55.16 464 64 464H384C392.8 464 400 456.8 400 448V192H48V448z"
+              />
+            </svg>
+            <span class="link-text">Aktuelles</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
               <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
               <path
@@ -95,21 +106,12 @@
             <span class="link-text">Workshops</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-              <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-              <path
-                d="M152 64H296V24C296 10.75 306.7 0 320 0C333.3 0 344 10.75 344 24V64H384C419.3 64 448 92.65 448 128V448C448 483.3 419.3 512 384 512H64C28.65 512 0 483.3 0 448V128C0 92.65 28.65 64 64 64H104V24C104 10.75 114.7 0 128 0C141.3 0 152 10.75 152 24V64zM48 448C48 456.8 55.16 464 64 464H384C392.8 464 400 456.8 400 448V192H48V448z"
-              />
-            </svg>
-            <span class="link-text">Aktuelles</span>
-          </a>
-        </li>
+
+        <!--referenzen put into profil to make navbar shorter-->
+        <!-- 
         <li class="nav-item">
           <a href="#" class="nav-link">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-              <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
               <path
                 d="M272 288h-64C163.8 288 128 323.8 128 368C128 376.8 135.2 384 144 384h192c8.836 0 16-7.164 16-16C352 323.8 316.2 288 272 288zM240 256c35.35 0 64-28.65 64-64s-28.65-64-64-64c-35.34 0-64 28.65-64 64S204.7 256 240 256zM496 320H480v96h16c8.836 0 16-7.164 16-16v-64C512 327.2 504.8 320 496 320zM496 64H480v96h16C504.8 160 512 152.8 512 144v-64C512 71.16 504.8 64 496 64zM496 192H480v96h16C504.8 288 512 280.8 512 272v-64C512 199.2 504.8 192 496 192zM384 0H96C60.65 0 32 28.65 32 64v384c0 35.35 28.65 64 64 64h288c35.35 0 64-28.65 64-64V64C448 28.65 419.3 0 384 0zM400 448c0 8.836-7.164 16-16 16H96c-8.836 0-16-7.164-16-16V64c0-8.838 7.164-16 16-16h288c8.836 0 16 7.162 16 16V448z"
               />
@@ -117,6 +119,8 @@
             <span class="link-text">Referenzen</span>
           </a>
         </li>
+          -->
+
         <li class="nav-item">
           <a href="/kontakt" class="nav-link">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -132,7 +136,17 @@
     </nav>
     <!--End navbar-->
     <main>{% block main %} {% endblock %}</main>
-    <footer class="footer">This is the footer</footer>
+    <footer class="footer">
+      <span>© 2023 mobilityandmore All rights reserved</span>
+      <span class="seperator">&nbsp|&nbsp</span>
+      <span
+        ><a href="#" class="footer-link"
+          >Impressum & Datenschutzerklärung</a
+        ></span
+      >
+      <span class="seperator">&nbsp|&nbsp</span>
+      <span>made by <a href="#" class="footer-link">Tim Krambeck</a></span>
+    </footer>
 
     <!--footer-->
     <!--add impressum and datenschutz-->
