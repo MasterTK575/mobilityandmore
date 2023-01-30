@@ -17,6 +17,6 @@ def profil():
     return render_template("profil.html")
 
 
-@app.route("/kontakt")
+@app.route("/kontakt", methods=["GET", "POST"])
 def kontakt():
     return render_template("kontakt.html")

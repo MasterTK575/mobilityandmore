@@ -1,19 +1,49 @@
 {% extends "layout.html" %} {% block title %}Kontakt{% endblock %} {% block main
 %}
 <h1>So erreicht ihr mich!</h1>
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-  incididunt ut labore et dolore magna aliqua. Elit pellentesque habitant morbi
-  tristique senectus et netus et malesuada. Egestas pretium aenean pharetra
-  magna ac placerat vestibulum. Aliquam vestibulum morbi blandit cursus risus.
-  Pharetra massa massa ultricies mi quis hendrerit dolor magna. Nisl rhoncus
-  mattis rhoncus urna neque viverra justo. Amet massa vitae tortor condimentum
-  lacinia quis. Fames ac turpis egestas maecenas pharetra convallis posuere
-  morbi. Malesuada bibendum arcu vitae elementum curabitur vitae nunc sed velit.
-  Fermentum posuere urna nec tincidunt praesent semper feugiat nibh sed. Tellus
-  pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Mauris rhoncus
-  aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque. Et
-  sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque. Odio
-  tempor orci dapibus ultrices in.
-</p>
+<form action="/kontakt" method="post" class="form">
+  <div class="form-item">
+    <label for="anrede">Anrede: *</label>
+    <select name="anrede" required>
+      <option value="">-- bitte wählen --</option>
+      <option value="herr">Herr</option>
+      <option value="frau">Frau</option>
+      <option value="divers">divers</option>
+      <option value="ohne">ohne Angabe</option>
+    </select>
+  </div>
+  <div class="form-item">
+    <label for="name">Name: *</label>
+    <input
+      autocomplete="off"
+      name="name"
+      type="text"
+      required
+      class="form-input"
+    />
+  </div>
+  <div class="form-item">
+    <label for="email">Email: *</label>
+    <input
+      autocomplete="off"
+      name="email"
+      type="email"
+      required
+      class="form-input"
+    />
+  </div>
+  <div class="form-item">
+    <label for="betreff">Betreff:</label>
+    <input autocomplete="off" name="betreff" type="text" class="form-input" />
+  </div>
+  <div class="form-item">
+    <label for="nachricht">Nachricht: *</label>
+    <textarea name="nachricht" required class="form-input"></textarea>
+  </div>
+  <div class="form-item">
+    <label for="submit"></label>
+    <button name="submit" type="submit">Absenden</button>
+    <span class="pflichtfelder">* Pflichtfelder</span>
+  </div>
+</form>
 {% endblock %}

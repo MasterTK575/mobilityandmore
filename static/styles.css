@@ -134,6 +134,40 @@ main {
     color: var(--text-secondary);
 }
 
+
+.form {
+    background-color: var(--bg-primary);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.form-item {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0.5rem 0rem;
+}
+.form-item label {
+    width: 7rem;
+}
+.form-input {
+    width: 15rem;
+    /* so that all iputs are the same size */
+    border-width: 1px;
+}
+.pflichtfelder {
+    font-size: 0.8rem;
+    text-align: center;
+    padding-left: 4rem;
+}
+/* make button and hint centered */
+.form-item:last-child {
+    align-items: center;
+}
+
 /* Small screens */
 @media only screen and (max-width: 600px) {
     /* Fix Navbar to the top */
